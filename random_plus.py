@@ -1,15 +1,13 @@
-#Created by MonsieurWaffle
-"card_rand v1.0.1"
-
-#Imports modules
+# Created by MonsieurWaffle1
+# Imports modules
 import random
 
 def test():
-    "Tests the module is correctly functioning"
+    # Tests the module is correctly functioning
     print ('The module is correctly functioning.')
 
 def card_checker(drawn_card, played_cards):
-    "Returns a variable based on weather or not the card has been drawn"
+    # Returns a variable based on weather or not the card has been drawn
     if drawn_card in played_cards:
         is_viable = False
     else:
@@ -18,10 +16,10 @@ def card_checker(drawn_card, played_cards):
     return played_cards, is_viable
 
 def draw_card(current_score, played_cards, ace_choise):
-    "Draws a playing card, provides a str representing the drawn card, as well as a current score. Will never draw the same card twice."
+    # Draws a playing card, provides a str representing the drawn card, as well as a current score. Will never draw the same card twice.
     draw = True
     while draw is True:
-        #Draws the card and determines the suit
+        # Draws the card and determines the suit
         drawn_card_number = random.randint(1, 13)
         card_suit = random.randint(1,4)
 
@@ -34,7 +32,7 @@ def draw_card(current_score, played_cards, ace_choise):
         elif card_suit == 4:
             card_suit = 'of Diamonds'
 
-        #Concentrates the drawn card from an int to a str
+        # Concentrates the drawn card from an int to a str
         if drawn_card_number == 1:
             display_card_number = 'Ace '
         elif drawn_card_number == 2:
@@ -64,7 +62,7 @@ def draw_card(current_score, played_cards, ace_choise):
 
         display_card = display_card_number + card_suit
 
-        #Assigns the correct values to the Jack, Queen and King cards
+        # Assigns the correct values to the Jack, Queen and King cards
         if drawn_card_number == 11:
             drawn_card_number = 10
         elif drawn_card_number == 12:
@@ -72,7 +70,7 @@ def draw_card(current_score, played_cards, ace_choise):
         elif drawn_card_number == 13:
             drawn_card_number = 10
 
-        #Asks the user to choose a value for the ace
+        # Asks the user to choose a value for the ace
         if drawn_card_number == 1:
             if ace_choise is True:
                 ace_desition = input('Would you like your ace to be 1 or 11? ')
@@ -89,7 +87,7 @@ def draw_card(current_score, played_cards, ace_choise):
         else:
             current_score = current_score + drawn_card_number
 
-        #Redraws the card if the card has already been drawn
+        # Redraws the card if the card has already been drawn
         drawn_card = display_card
         played_cards, is_viable = card_checker(drawn_card, played_cards)
         if is_viable is True:
