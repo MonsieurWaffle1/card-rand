@@ -1,11 +1,3 @@
-card_rand v1.0
-Created by MonsieurWaffle
-Hope you enjoy!
-
---CHANGELOG--
-v1.0 - Basic functionality.
-v1.0.1 - Ensured varibles conformed to naming conventions, added docstirngs.
-
 --ABOUT--
 Thanks for using card_rand!
 This module allows you to:
@@ -26,7 +18,7 @@ This module allows you to:
 --METHODS--
 
 test():
-    Function - Checks if the module is functioning correctly by prining a short phrase.
+    Function - Checks if the module is functioning correctly by printing a short phrase.
 
     Parameters:
         None
